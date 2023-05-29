@@ -31,7 +31,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -42,7 +42,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $newComic = new Comic();
+        $newComic->fill($form_data);
+        $newComic->save();
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
@@ -60,7 +64,7 @@ class ComicController extends Controller
             'social_links' => config('dblinks.social_links'),
             'comic' => $comic
         ];
-        return view('comics.show', $data);
+        return view('comics.show', compact('comic'), $data);
 
     }
 

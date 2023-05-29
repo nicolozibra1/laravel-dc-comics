@@ -30,9 +30,7 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center align-items-center">
-        <button class="px-5 py-2">
-            load more
-        </button>
+        <a href="{{route('comics.create')}}" class="btn btn-primary">ADD NEW COMIC</a>
     </div>
 </section>
 @endsection
