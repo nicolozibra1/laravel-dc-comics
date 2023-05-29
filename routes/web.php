@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -198,6 +199,8 @@ Route::get('/', function () {
     // dd(config('db.comics'));
     return view('home', $data);
 })->name('home');
+
+Route::resource('comics', ComicsController::class);
 
 Route::get('/comics/{id}', function ($id) {
     $data = [
