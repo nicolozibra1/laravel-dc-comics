@@ -2,70 +2,75 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Comic;
+use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $comic = Comic::all();
-        return view('comics.index', compact('comics'));
-
+        $data = [
+            'nav_links' => config('dblinks.nav_links'),
+            'banner_promo' => config('dblinks.banner_promo'),
+            'footer_links' => config('dblinks.footer_links'),
+            'social_links' => config('dblinks.social_links'),
+            'comics' => Comic::all()
+        ];
+        return view('comics.home', $data);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('comics.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     *
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        $form_data = $request->all();
-        $newComic = new Comic();
-        $newComic->fill($form_data);
-        $newComic->save();
-        return redirect()->route('comics.show', $newComic->id);
+        //
     }
-
-
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     *
+     * @param  \App\Models\Comic  $comic
+     * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic)
     {
-        return view('comics.show', compact('comic'));
+        $data = [
+            'nav_links' => config('dblinks.nav_links'),
+            'banner_promo' => config('dblinks.banner_promo'),
+            'footer_links' => config('dblinks.footer_links'),
+            'social_links' => config('dblinks.social_links'),
+            'comic' => $comic
+        ];
+        return view('comics.show', $data);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     *
+     * @param  \App\Models\Comic  $comic
+     * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
         //
     }
@@ -74,10 +79,10 @@ class ComicController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     *
+     * @param  \App\Models\Comic  $comic
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
         //
     }
@@ -85,10 +90,10 @@ class ComicController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     *
+     * @param  \App\Models\Comic  $comic
+     * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
         //
     }

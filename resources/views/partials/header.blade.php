@@ -6,9 +6,9 @@
     </div>
     <div class="v-menu" v-if="open">
         <ul class="ul list-unstyled mb-2">
-            @foreach ($nav_links as $link )
+            {{-- @foreach ($nav_links as $link )
                 <li><a href="#" class="h-links">{{$link}}</a></li>
-            @endforeach
+            @endforeach --}}
         </ul>
     </div>
 </header>

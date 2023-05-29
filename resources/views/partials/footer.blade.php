@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 debug py-5" id="col-links">
-                    @foreach ($footer_links as $link )
+                    {{-- @foreach ($footer_links as $link )
                         <ul class="list-unstyled d-flex flex-column flex-wrap">
                             <li class="text-uppercase fw-bold fs-5 mb-2" id="link-title">
                                 {{ $link['title'] }}
@@ -14,7 +14,7 @@
                                 @endforeach
                             </li>
                         </ul>
-                    @endforeach
+                    @endforeach --}}
                 </div>
                 <div class="col-6 debug" id="col-logo">
                     <div class="box-logo">
@@ -33,7 +33,7 @@
             </div>
             <div class="social-links h-100 d-flex align-items-center gap-3 debug">
                 <span>follow us</span>
-                @foreach ($social_links as $link )
+                {{-- @foreach ($social_links as $link )
                 <ul class="list-unstyled debug">
                     <li class="pt-3">
                         <a href="#">
@@ -41,7 +41,7 @@
                         </a>
                     </li>
                 </ul>
-                @endforeach
+                @endforeach --}}
             </div>
         </div>
     </div>

@@ -9,17 +9,17 @@
         <div class="row d-flex">
             @foreach ($comics as $comic )
             <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2 p-1 debug d-flex justify-content-center align-items-center">
-                <a href="{{route('comics.show', ['id' => $loop->index])}}">
+                <a href="{{route('comics.show', ['comic' => $comic->id])}}">
                     <div class="card mt-3">
                         <div class="card-image">
                             <div class="box-image">
-                                <img src="{{$comic['thumb']}}" alt="comic" >
+                                <img src="{{$comic->thumb}}" alt="comic" >
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="name">
                                 <span class="title text-uppercase">
-                                    {{ $comic['series'] }}
+                                    {{ $comic->series }}
                                 </span>
                             </div>
                         </div>
