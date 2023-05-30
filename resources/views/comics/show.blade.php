@@ -12,7 +12,7 @@
             <h1 class="mb-3 fw-semibold">{{ $comic->title }}</h1>
             <div class="box-c2a mb-3 d-flex">
                 <div class="price w-75 d-flex justify-content-between">
-                    <span class="py-2">U.S. Price: <span class="fw-semibold">{{ $comic->price }}</span></span>
+                    <span class="py-2">U.S. Price: <span class="fw-semibold">${{ $comic->price }}</span></span>
                     <span class="text-uppercase px-3 py-2">available</span>
                 </div>
                 <div class="check-available w-25 d-flex justify-content-center">
@@ -40,9 +40,11 @@
                         <h5 class="fw-semibold">Art by:</h5>
                     </div>
                     <div class="content w-75">
-                        @foreach (json_decode($comic->artists) as $artist)
-                            <a href="#"><span>{{$artist}},</span></a>
-                        @endforeach
+                        @if ($comic->artists)
+                            @foreach (json_decode($comic->artists) as $artist)
+                                <a href="#"><span>{{$artist}},</span></a>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
                 <hr>
@@ -51,9 +53,11 @@
                         <h5 class="fw-semibold">Written by:</h5>
                     </div>
                     <div class="content w-75">
-                        @foreach (json_decode($comic->writers) as $writer)
-                            <a href="#"><span>{{$writer}},</span></a>
-                        @endforeach
+                        @if ($comic->writers)
+                            @foreach (json_decode($comic->writers) as $writer)
+                                <a href="#"><span>{{$writer}},</span></a>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

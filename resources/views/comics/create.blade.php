@@ -32,7 +32,7 @@
                         <input required name="sale_date" type="date" class="form-control" id="sale_date">
                     </div>
                 </div>
-                <div class="row mb-3">
+                {{-- <div class="row mb-3">
                     <div class="col-6">
                         <label for="writers" class="form-label">Writers</label>
                         <input required name="writers" type="text" class="form-control" id="writers">
@@ -41,7 +41,7 @@
                         <label for="artists" class="form-label">Artists</label>
                         <input required name="artists" type="text" class="form-control" id="artists">
                     </div>
-                </div>
+                </div> --}}
                 <div class="row mb-3 ">
                     <div class="col-6">
                         <label for="series" class="form-label text-center">Series</label>

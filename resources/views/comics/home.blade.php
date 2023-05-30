@@ -6,7 +6,7 @@
         <div class="section-title d-flex justify-content-center align-items-center">
             <h4 class="text-white text-uppercase px-4 py-2">current series</h4>
         </div>
-        <form action="{{route('comics.index')}}" method="GET" class="w-50 bg-primary px-5 py-2 rounded-2 d-flex justify-content-center align-items-center">
+        <form action="{{route('comics.index')}}" method="GET" class="w-50 bg-primary mb-3 px-5 py-2 rounded-2 d-flex justify-content-center align-items-center">
             <i class="fa-solid fa-filter text-white pe-2"></i>
             <h6 class="text-white fw-semibold mt-2 pe-4">FILTER</h6>
             <label for="type" class="text-white fst-italic pe-1">Type:</label>
