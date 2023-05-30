@@ -87,12 +87,21 @@
                         <span class="fw-semibold">{{$comic['sale_date']}}</span>
                     </div>
                 </div>
-                <div class="edit">
-                    <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning">EDIT</a>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 d-flex justify-content-center gap-3">
+                    <div class="edit">
+                        <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning text-white"><i class="fa-solid fa-pen"> EDIT</i></a>
+                    </div>
+                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete-button btn btn-danger py-2 fw-semibold" data-item-title="{{$comic->title}}"><i class="fa-solid fa-xmark fw-semibold"> delete</i></button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+@include('partials.popupdelete')
 @endsection

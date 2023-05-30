@@ -38,11 +38,6 @@
                                     {{ $comic->series }}
                                 </span>
                             </div>
-                            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="delete-button btn btn-warning" data-item-title="{{$comic->title}}">Cancella</button>
-                            </form>
                         </div>
                     </div>
                 </a>
@@ -51,7 +46,7 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center align-items-center">
-        <a href="{{route('comics.create')}}" class="btn btn-primary">ADD NEW COMIC</a>
+        <a href="{{route('comics.create')}}" class="btn btn-success">ADD NEW COMIC</a>
     </div>
 </section>
 @include('partials.popupdelete')
