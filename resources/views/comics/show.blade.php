@@ -40,11 +40,7 @@
                         <h5 class="fw-semibold">Art by:</h5>
                     </div>
                     <div class="content w-75">
-                        @if ($comic->artists)
-                            @foreach (json_decode($comic->artists) as $artist)
-                                <a href="#"><span>{{$artist}},</span></a>
-                            @endforeach
-                        @endif
+                        <p>{{$comic->artists}}</p>
                     </div>
                 </div>
                 <hr>
@@ -53,11 +49,7 @@
                         <h5 class="fw-semibold">Written by:</h5>
                     </div>
                     <div class="content w-75">
-                        @if ($comic->writers)
-                            @foreach (json_decode($comic->writers) as $writer)
-                                <a href="#"><span>{{$writer}},</span></a>
-                            @endforeach
-                        @endif
+                        <p>{{$comic->writers}}</p>
                     </div>
                 </div>
             </div>

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('series');
             $table->date('sale_date');
             $table->string('type');
-            $table->json('artists'); // Colonna per gli artisti come JSON
-            $table->json('writers'); // Colonna per gli scrittori come JSON
+            $table->string('artists');
+            $table->string('writers');
             $table->timestamps();
         });
     }
