@@ -39,23 +39,22 @@
                     <div class="sub-details w-25">
                         <h5 class="fw-semibold">Art by:</h5>
                     </div>
-                    {{-- <div class="content w-75">
-                        @foreach ($comic['artists'] as $artist )
+                    <div class="content w-75">
+                        @foreach (json_decode($comic->artists) as $artist)
                             <a href="#"><span>{{$artist}},</span></a>
                         @endforeach
-
-                    </div> --}}
+                    </div>
                 </div>
                 <hr>
                 <div class="box-details d-flex">
                     <div class="sub-details w-25">
                         <h5 class="fw-semibold">Written by:</h5>
                     </div>
-                    {{-- <div class="content w-75">
-                        @foreach ($comic['writers'] as $writer )
+                    <div class="content w-75">
+                        @foreach (json_decode($comic->writers) as $writer)
                             <a href="#"><span>{{$writer}},</span></a>
                         @endforeach
-                    </div> --}}
+                    </div>
                 </div>
             </div>
             <div class="col-6">
