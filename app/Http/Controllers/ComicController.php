@@ -10,10 +10,18 @@ class ComicController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->query('type');
+        if($search) {
+            $comics = Comic::where('type', $search)->get();
+        }
+        else {
+            $comics = Comic::all();
+        }
         $data = [
             'nav_links' => config('dblinks.nav_links'),
             'banner_promo' => config('dblinks.banner_promo'),
@@ -21,7 +29,7 @@ class ComicController extends Controller
             'social_links' => config('dblinks.social_links'),
             'comics' => Comic::all()
         ];
-        return view('comics.home', $data);
+        return view('comics.home', compact('comics'));
     }
 
     /**
@@ -46,7 +54,7 @@ class ComicController extends Controller
         $newComic = new Comic();
         $newComic->fill($form_data);
         $newComic->save();
-        return redirect()->route('comics.show', $newComic->id);
+        return redirect()->route('comics.show', $newComic->id)->with('message', "Il prodtto con id {{$newComic->id}} è stato salvato con successo");
     }
 
     /**
@@ -76,7 +84,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -88,7 +96,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+        $comic->update($form_data);
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
@@ -99,6 +109,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index')->with('message', "Comics whit id: ($comic->id) cancellato con successo");
     }
 }

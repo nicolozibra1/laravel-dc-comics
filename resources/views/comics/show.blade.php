@@ -87,6 +87,9 @@
                         <span class="fw-semibold">{{$comic['sale_date']}}</span>
                     </div>
                 </div>
+                <div class="edit">
+                    <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning">EDIT</a>
+                </div>
             </div>
         </div>
     </div>
