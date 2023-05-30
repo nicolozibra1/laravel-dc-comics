@@ -32,16 +32,24 @@
                         <input required name="sale_date" type="date" class="form-control" id="sale_date" value="{{$comic->sale_date}}">
                     </div>
                 </div>
-                {{-- <div class="row mb-3">
-                    <div class="col-6">
+                <div class="row mb-3">
+                    {{-- <div class="col-6">
                         <label for="writers" class="form-label">Writers</label>
-                        <input required name="writers" type="text" class="form-control" id="writers" value="{{$comic->writers}}">
+                        <textarea required name="writers" type="text" class="form-control" id="writers">
+                            @foreach (json_decode($comic->writers) as $writer)
+                            {{$writer}}
+                            @endforeach
+                        </textarea>
                     </div>
                     <div class="col-6">
                         <label for="artists" class="form-label">Artists</label>
-                        <input required name="artists" type="text" class="form-control" id="artists" value="{{$comic->artists}}">
-                    </div>
-                </div> --}}
+                        <textarea required name="artists" type="text" class="form-control" id="artists">
+                            @foreach (json_decode($comic->artists) as $artist)
+                            {{$artist}}
+                            @endforeach
+                        </textarea>
+                    </div> --}}
+                </div>
                 <div class="row mb-3 ">
                     <div class="col-6">
                         <label for="series" class="form-label text-center">Series</label>

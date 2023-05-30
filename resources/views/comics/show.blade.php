@@ -74,7 +74,7 @@
                         <h5 class="fw-semibold">U.S. Price:</h5>
                     </div>
                     <div class="content w-75">
-                        <span class="fw-semibold">{{$comic->price}}</span>
+                        <span class="fw-semibold">${{$comic->price}}</span>
                     </div>
                 </div>
                 <hr>
