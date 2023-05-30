@@ -46,19 +46,19 @@
                     <div class="col-6">
                         <label for="series" class="form-label text-center">Series</label>
                         <input name="series" required name="series" type="text"class="form-control"
-                            id="series" value="{{$comic->series}}"></textarea>
+                            id="series" value="{{$comic->series}}">
                     </div>
                     <div class="col-6 ">
                         <label for="price" class="form-label text-center">Price</label>
-                        <input name="price" required name="price" type="number" min="0.01" max="90000" step="0.01"
-                            class="form-control" id="price" value="{{$comic->price}}"></textarea>
+                        <input required name="price" type="number" min="0.01" max="90000" step="0.01"
+                            class="form-control" id="price" placeholder="{{$comic->price}}">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-12">
-                        <label for="writers" class="form-label">Description</label>
-                        <textarea name="description" required placeholder="A description for the comic" name="writers" type="text"
-                            class="form-control" id="writers" value="{{$comic->description}}"></textarea>
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="description" required placeholder="A description for the comic" name="description" type="text"
+                            class="form-control" id="description">{{$comic->description}}</textarea>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mb-3 gap-3">

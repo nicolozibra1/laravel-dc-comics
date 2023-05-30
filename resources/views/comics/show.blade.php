@@ -12,14 +12,14 @@
             <h1 class="mb-3 fw-semibold">{{ $comic->title }}</h1>
             <div class="box-c2a mb-3 d-flex">
                 <div class="price w-75 d-flex justify-content-between">
-                    <span class="py-2">U.S. Price: <span class="fw-semibold">{{$comic->price}}</span></span>
+                    <span class="py-2">U.S. Price: <span class="fw-semibold">{{ $comic->price }}</span></span>
                     <span class="text-uppercase px-3 py-2">available</span>
                 </div>
                 <div class="check-available w-25 d-flex justify-content-center">
                     <span class="py-2 fw-semibold">Check Availability</span>
                 </div>
             </div>
-            <p class="fw-semibold">{{$comic->description}}</p>
+            <p class="fw-semibold">{{ $comic->description }}</p>
         </div>
         <div class="col-4">
             <div class="box-adv">
@@ -66,7 +66,7 @@
                         <h5 class="fw-semibold">Series:</h5>
                     </div>
                     <div class="content w-75">
-                        <a href="#"><span>{{$comic['series']}}</span></a>
+                        <a href="#"><span>{{$comic->series}}</span></a>
                     </div>
                 </div>
                 <hr>
@@ -75,7 +75,7 @@
                         <h5 class="fw-semibold">U.S. Price:</h5>
                     </div>
                     <div class="content w-75">
-                        <span class="fw-semibold">{{$comic['price']}}</span>
+                        <span class="fw-semibold">{{$comic->price}}</span>
                     </div>
                 </div>
                 <hr>
@@ -84,7 +84,7 @@
                         <h5 class="fw-semibold">On Sale Date:</h5>
                     </div>
                     <div class="content w-75">
-                        <span class="fw-semibold">{{$comic['sale_date']}}</span>
+                        <span class="fw-semibold">{{$comic->sale_date}}</span>
                     </div>
                 </div>
             </div>
