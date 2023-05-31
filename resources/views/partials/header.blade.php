@@ -6,9 +6,11 @@
     </div>
     <div class="v-menu" v-if="open">
         <ul class="ul list-unstyled mb-2">
-            {{-- @foreach ($nav_links as $link )
-                <li><a href="#" class="h-links">{{$link}}</a></li>
-            @endforeach --}}
+            @foreach(config('dblinks') as $linksArray)
+                @foreach($linksArray['nav_links'] as $link)
+                    <li><a href="{{ $link }}" class="h-links">{{ $link }}</a></li>
+                @endforeach
+            @endforeach
         </ul>
     </div>
 </header>

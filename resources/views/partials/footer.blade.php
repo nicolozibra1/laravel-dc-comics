@@ -33,7 +33,7 @@
             </div>
             <div class="social-links h-100 d-flex align-items-center gap-3 debug">
                 <span>follow us</span>
-                {{-- @foreach ($social_links as $link )
+                @foreach (config('dblinks')[0]['social_links'] as $link)
                 <ul class="list-unstyled debug">
                     <li class="pt-3">
                         <a href="#">
@@ -41,7 +41,7 @@
                         </a>
                     </li>
                 </ul>
-                @endforeach --}}
+                @endforeach
             </div>
         </div>
     </div>
